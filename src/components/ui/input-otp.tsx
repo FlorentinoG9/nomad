@@ -17,14 +17,14 @@ function InputOTP({
     <OTPInput
       className={cn("disabled:cursor-not-allowed", className)}
       containerClassName={cn("flex items-center gap-2 has-disabled:opacity-50", containerClassName)}
-      data-slot="input-otp"
+      data-slot='input-otp'
       {...props}
     />
   )
 }
 
 function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
-  return <div className={cn("flex items-center", className)} data-slot="input-otp-group" {...props} />
+  return <div className={cn("flex items-center", className)} data-slot='input-otp-group' {...props} />
 }
 
 function InputOTPSlot({
@@ -44,13 +44,13 @@ function InputOTPSlot({
         className
       )}
       data-active={isActive}
-      data-slot="input-otp-slot"
+      data-slot='input-otp-slot'
       {...props}
     >
       {char}
       {hasFakeCaret && (
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="h-4 w-px animate-caret-blink bg-foreground duration-1000" />
+        <div className='pointer-events-none absolute inset-0 flex items-center justify-center'>
+          <div className='h-4 w-px animate-caret-blink bg-foreground duration-1000' />
         </div>
       )}
     </div>
@@ -61,7 +61,7 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
   return (
     // biome-ignore lint/a11y/useFocusableInteractive: we want to use a div here
     // biome-ignore lint/a11y/useSemanticElements: could not use hr here
-    <div data-slot="input-otp-separator" role="separator" {...props}>
+    <div aria-valuenow={0} data-slot='input-otp-separator' role='separator' {...props}>
       <MinusIcon />
     </div>
   )

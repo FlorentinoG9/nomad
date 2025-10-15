@@ -53,7 +53,7 @@ function ChartContainer({
           className
         )}
         data-chart={chartId}
-        data-slot="chart"
+        data-slot='chart'
         {...props}
       >
         <ChartStyle config={config} id={chartId} />
@@ -155,7 +155,7 @@ function ChartTooltipContent({
       )}
     >
       {nestLabel ? null : tooltipLabel}
-      <div className="grid gap-1.5">
+      <div className='grid gap-1.5'>
         {payload
           .filter((item) => item.type !== "none")
           .map((item, index) => {
@@ -201,12 +201,12 @@ function ChartTooltipContent({
                         nestLabel ? "items-end" : "items-center"
                       )}
                     >
-                      <div className="grid gap-1.5">
+                      <div className='grid gap-1.5'>
                         {nestLabel ? tooltipLabel : null}
-                        <span className="text-muted-foreground">{itemConfig?.label || item.name}</span>
+                        <span className='text-muted-foreground'>{itemConfig?.label || item.name}</span>
                       </div>
                       {item.value && (
-                        <span className="font-medium font-mono text-foreground tabular-nums">
+                        <span className='font-medium font-mono text-foreground tabular-nums'>
                           {item.value.toLocaleString()}
                         </span>
                       )}
@@ -257,7 +257,7 @@ function ChartLegendContent({
                 <itemConfig.icon />
               ) : (
                 <div
-                  className="h-2 w-2 shrink-0 rounded-[2px]"
+                  className='h-2 w-2 shrink-0 rounded-[2px]'
                   style={{
                     backgroundColor: item.color,
                   }}

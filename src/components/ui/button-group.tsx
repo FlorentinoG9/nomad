@@ -29,7 +29,7 @@ function ButtonGroup({
     <fieldset
       className={cn(buttonGroupVariants({ orientation }), className)}
       data-orientation={orientation}
-      data-slot="button-group"
+      data-slot='button-group'
       {...props}
     />
   )
@@ -63,7 +63,7 @@ function ButtonGroupSeparator({
   return (
     <Separator
       className={cn("!m-0 relative self-stretch bg-input data-[orientation=vertical]:h-auto", className)}
-      data-slot="button-group-separator"
+      data-slot='button-group-separator'
       orientation={orientation}
       {...props}
     />

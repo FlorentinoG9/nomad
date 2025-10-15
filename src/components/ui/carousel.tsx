@@ -121,11 +121,11 @@ function Carousel({
       }}
     >
       <section
-        aria-roledescription="carousel"
+        aria-roledescription='carousel'
         className={cn("relative", className)}
-        data-slot="carousel"
+        data-slot='carousel'
         onKeyDownCapture={handleKeyDown}
-        role="presentation"
+        role='presentation'
         {...props}
       >
         {children}
@@ -138,7 +138,7 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   const { carouselRef, orientation } = useCarousel()
 
   return (
-    <div className="overflow-hidden" data-slot="carousel-content" ref={carouselRef}>
+    <div className='overflow-hidden' data-slot='carousel-content' ref={carouselRef}>
       <div className={cn("flex", orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col", className)} {...props} />
     </div>
   )
@@ -149,10 +149,10 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
 
   return (
     <section
-      aria-roledescription="slide"
+      aria-roledescription='slide'
       className={cn("min-w-0 shrink-0 grow-0 basis-full", orientation === "horizontal" ? "pl-4" : "pt-4", className)}
-      data-slot="carousel-item"
-      role="presentation"
+      data-slot='carousel-item'
+      role='presentation'
       {...props}
     />
   )
@@ -175,7 +175,7 @@ function CarouselPrevious({
           : "-top-12 -translate-x-1/2 left-1/2 rotate-90",
         className
       )}
-      data-slot="carousel-previous"
+      data-slot='carousel-previous'
       disabled={!canScrollPrev}
       onClick={scrollPrev}
       size={size}
@@ -183,7 +183,7 @@ function CarouselPrevious({
       {...props}
     >
       <ArrowLeft />
-      <span className="sr-only">Previous slide</span>
+      <span className='sr-only'>Previous slide</span>
     </Button>
   )
 }
@@ -205,7 +205,7 @@ function CarouselNext({
           : "-bottom-12 -translate-x-1/2 left-1/2 rotate-90",
         className
       )}
-      data-slot="carousel-next"
+      data-slot='carousel-next'
       disabled={!canScrollNext}
       onClick={scrollNext}
       size={size}
@@ -213,7 +213,7 @@ function CarouselNext({
       {...props}
     >
       <ArrowRight />
-      <span className="sr-only">Next slide</span>
+      <span className='sr-only'>Next slide</span>
     </Button>
   )
 }

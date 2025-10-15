@@ -92,7 +92,7 @@ function Calendar({
       }}
       components={{
         Root: ({ className, rootRef, ...props }) => (
-          <div className={cn(className)} data-slot="calendar" ref={rootRef} {...props} />
+          <div className={cn(className)} data-slot='calendar' ref={rootRef} {...props} />
         ),
         Chevron: ({ className, orientation, ...props }) => {
           if (orientation === "left") {
@@ -108,7 +108,7 @@ function Calendar({
         DayButton: CalendarDayButton,
         WeekNumber: ({ children, ...props }) => (
           <td {...props}>
-            <div className="flex size-(--cell-size) items-center justify-center text-center">{children}</div>
+            <div className='flex size-(--cell-size) items-center justify-center text-center'>{children}</div>
           </td>
         ),
         ...components,
@@ -148,8 +148,8 @@ function CalendarDayButton({ className, day, modifiers, ...props }: React.Compon
         modifiers.selected && !modifiers.range_start && !modifiers.range_end && !modifiers.range_middle
       }
       ref={ref}
-      size="icon"
-      variant="ghost"
+      size='icon'
+      variant='ghost'
       {...props}
     />
   )

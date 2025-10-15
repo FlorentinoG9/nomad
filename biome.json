@@ -1,4 +1,26 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.6/schema.json",
-  "extends": ["ultracite"]
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "extends": ["ultracite"],
+  "linter": {
+    "rules": {
+      "performance": {
+        "noNamespaceImport": "off"
+      },
+      "nursery": {
+        "noShadow": "off"
+      },
+      "style": {
+        "noMagicNumbers": "off"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 120,
+      "jsxQuoteStyle": "single"
+    }
+  }
 }
