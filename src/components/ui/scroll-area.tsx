@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
-import type * as React from "react";
+import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area"
+import type * as React from "react"
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
 function ScrollArea({ className, children, ...props }: React.ComponentProps<typeof ScrollAreaPrimitive.Root>) {
   return (
@@ -17,7 +17,7 @@ function ScrollArea({ className, children, ...props }: React.ComponentProps<type
       <ScrollBar />
       <ScrollAreaPrimitive.Corner />
     </ScrollAreaPrimitive.Root>
-  );
+  )
 }
 
 function ScrollBar({
@@ -42,7 +42,7 @@ function ScrollBar({
         data-slot="scroll-area-thumb"
       />
     </ScrollAreaPrimitive.ScrollAreaScrollbar>
-  );
+  )
 }
 
-export { ScrollArea, ScrollBar };
+export { ScrollArea, ScrollBar }

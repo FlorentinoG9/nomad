@@ -1,20 +1,20 @@
-"use client";
+"use client"
 
-import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
-import type * as React from "react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
+import type * as React from "react"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 
 function AlertDialog({ ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Root>) {
-  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
+  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />
 }
 
 function AlertDialogTrigger({ ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Trigger>) {
-  return <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />;
+  return <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
 }
 
 function AlertDialogPortal({ ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Portal>) {
-  return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />;
+  return <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
 }
 
 function AlertDialogOverlay({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Overlay>) {
@@ -27,7 +27,7 @@ function AlertDialogOverlay({ className, ...props }: React.ComponentProps<typeof
       data-slot="alert-dialog-overlay"
       {...props}
     />
-  );
+  )
 }
 
 function AlertDialogContent({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Content>) {
@@ -43,7 +43,7 @@ function AlertDialogContent({ className, ...props }: React.ComponentProps<typeof
         {...props}
       />
     </AlertDialogPortal>
-  );
+  )
 }
 
 function AlertDialogHeader({ className, ...props }: React.ComponentProps<"div">) {
@@ -53,7 +53,7 @@ function AlertDialogHeader({ className, ...props }: React.ComponentProps<"div">)
       data-slot="alert-dialog-header"
       {...props}
     />
-  );
+  )
 }
 
 function AlertDialogFooter({ className, ...props }: React.ComponentProps<"div">) {
@@ -63,7 +63,7 @@ function AlertDialogFooter({ className, ...props }: React.ComponentProps<"div">)
       data-slot="alert-dialog-footer"
       {...props}
     />
-  );
+  )
 }
 
 function AlertDialogTitle({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Title>) {
@@ -73,7 +73,7 @@ function AlertDialogTitle({ className, ...props }: React.ComponentProps<typeof A
       data-slot="alert-dialog-title"
       {...props}
     />
-  );
+  )
 }
 
 function AlertDialogDescription({
@@ -86,15 +86,15 @@ function AlertDialogDescription({
       data-slot="alert-dialog-description"
       {...props}
     />
-  );
+  )
 }
 
 function AlertDialogAction({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Action>) {
-  return <AlertDialogPrimitive.Action className={cn(buttonVariants(), className)} {...props} />;
+  return <AlertDialogPrimitive.Action className={cn(buttonVariants(), className)} {...props} />
 }
 
 function AlertDialogCancel({ className, ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Cancel>) {
-  return <AlertDialogPrimitive.Cancel className={cn(buttonVariants({ variant: "outline" }), className)} {...props} />;
+  return <AlertDialogPrimitive.Cancel className={cn(buttonVariants({ variant: "outline" }), className)} {...props} />
 }
 
 export {
@@ -109,4 +109,4 @@ export {
   AlertDialogDescription,
   AlertDialogAction,
   AlertDialogCancel,
-};
+}
