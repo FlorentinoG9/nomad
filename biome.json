@@ -11,6 +11,9 @@
       },
       "style": {
         "noMagicNumbers": "off"
+      },
+      "suspicious": {
+        "noUnknownAtRules": "off"
       }
     }
   },
