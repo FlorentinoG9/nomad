@@ -28,7 +28,7 @@ function InputGroup({ className, ...props }: React.ComponentProps<"fieldset">) {
 
         className
       )}
-      data-slot="input-group"
+      data-slot='input-group'
       {...props}
     />
   )
@@ -63,7 +63,7 @@ function InputGroupAddon({
     <fieldset
       className={cn(inputGroupAddonVariants({ align }), className)}
       data-align={align}
-      data-slot="input-group-addon"
+      data-slot='input-group-addon'
       onClick={(e) => {
         if ((e.target as HTMLElement).closest("button")) {
           return
@@ -126,7 +126,7 @@ function InputGroupInput({ className, ...props }: React.ComponentProps<"input">)
         "flex-1 rounded-none border-0 bg-transparent shadow-none focus-visible:ring-0 dark:bg-transparent",
         className
       )}
-      data-slot="input-group-control"
+      data-slot='input-group-control'
       {...props}
     />
   )
@@ -139,7 +139,7 @@ function InputGroupTextarea({ className, ...props }: React.ComponentProps<"texta
         "flex-1 resize-none rounded-none border-0 bg-transparent py-3 shadow-none focus-visible:ring-0 dark:bg-transparent",
         className
       )}
-      data-slot="input-group-control"
+      data-slot='input-group-control'
       {...props}
     />
   )

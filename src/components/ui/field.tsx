@@ -14,7 +14,7 @@ function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
         "has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3",
         className
       )}
-      data-slot="field-set"
+      data-slot='field-set'
       {...props}
     />
   )
@@ -28,7 +28,7 @@ function FieldLegend({
   return (
     <legend
       className={cn("mb-3 font-medium", "data-[variant=legend]:text-base", "data-[variant=label]:text-sm", className)}
-      data-slot="field-legend"
+      data-slot='field-legend'
       data-variant={variant}
       {...props}
     />
@@ -42,7 +42,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
         "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 [&>[data-slot=field-group]]:gap-4",
         className
       )}
-      data-slot="field-group"
+      data-slot='field-group'
       {...props}
     />
   )
@@ -78,7 +78,7 @@ function Field({
     <fieldset
       className={cn(fieldVariants({ orientation }), className)}
       data-orientation={orientation}
-      data-slot="field"
+      data-slot='field'
       {...props}
     />
   )
@@ -88,7 +88,7 @@ function FieldContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       className={cn("group/field-content flex flex-1 flex-col gap-1.5 leading-snug", className)}
-      data-slot="field-content"
+      data-slot='field-content'
       {...props}
     />
   )
@@ -103,7 +103,7 @@ function FieldLabel({ className, ...props }: React.ComponentProps<typeof Label>)
         "has-data-[state=checked]:border-primary has-data-[state=checked]:bg-primary/5 dark:has-data-[state=checked]:bg-primary/10",
         className
       )}
-      data-slot="field-label"
+      data-slot='field-label'
       {...props}
     />
   )
@@ -116,7 +116,7 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
         "flex w-fit items-center gap-2 font-medium text-sm leading-snug group-data-[disabled=true]/field:opacity-50",
         className
       )}
-      data-slot="field-label"
+      data-slot='field-label'
       {...props}
     />
   )
@@ -131,7 +131,7 @@ function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
         "[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4",
         className
       )}
-      data-slot="field-description"
+      data-slot='field-description'
       {...props}
     />
   )
@@ -148,14 +148,14 @@ function FieldSeparator({
     <div
       className={cn("-my-2 group-data-[variant=outline]/field-group:-mb-2 relative h-5 text-sm", className)}
       data-content={!!children}
-      data-slot="field-separator"
+      data-slot='field-separator'
       {...props}
     >
-      <Separator className="absolute inset-0 top-1/2" />
+      <Separator className='absolute inset-0 top-1/2' />
       {children && (
         <span
-          className="relative mx-auto block w-fit bg-background px-2 text-muted-foreground"
-          data-slot="field-separator-content"
+          className='relative mx-auto block w-fit bg-background px-2 text-muted-foreground'
+          data-slot='field-separator-content'
         >
           {children}
         </span>
@@ -186,9 +186,12 @@ function FieldError({
     }
 
     return (
-      <ul className="ml-4 flex list-disc flex-col gap-1">
-        {/** biome-ignore lint/suspicious/noArrayIndexKey: its ok for errors */}
-        {errors.map((error, index) => error?.message && <li key={index}>{error.message}</li>)}
+      <ul className='ml-4 flex list-disc flex-col gap-1'>
+        {errors.map(
+          (error, index) =>
+            // biome-ignore lint/suspicious/noArrayIndexKey: its ok for errors
+            error?.message && <li key={index}>{error.message}</li>
+        )}
       </ul>
     )
   }, [children, errors])
@@ -200,8 +203,8 @@ function FieldError({
   return (
     <div
       className={cn("font-normal text-destructive text-sm", className)}
-      data-slot="field-error"
-      role="alert"
+      data-slot='field-error'
+      role='alert'
       {...props}
     >
       {content}

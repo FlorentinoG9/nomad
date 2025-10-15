@@ -9,14 +9,14 @@ function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
         "[[data-slot=tooltip-content]_&]:bg-background/20 [[data-slot=tooltip-content]_&]:text-background dark:[[data-slot=tooltip-content]_&]:bg-background/10",
         className
       )}
-      data-slot="kbd"
+      data-slot='kbd'
       {...props}
     />
   )
 }
 
 function KbdGroup({ className, ...props }: React.ComponentProps<"div">) {
-  return <kbd className={cn("inline-flex items-center gap-1", className)} data-slot="kbd-group" {...props} />
+  return <kbd className={cn("inline-flex items-center gap-1", className)} data-slot='kbd-group' {...props} />
 }
 
 export { Kbd, KbdGroup }

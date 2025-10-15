@@ -1,54 +1,29 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "files": {
-    "ignoreUnknown": true
-  },
+  "extends": ["ultracite"],
   "linter": {
-    "enabled": true,
     "rules": {
-      "suspicious": {
-        "noUnknownAtRules": "off"
-      },
       "performance": {
         "noNamespaceImport": "off"
-      },
-      "a11y": {
-        "useAriaPropsForRole": "off"
       },
       "nursery": {
         "noShadow": "off"
       },
       "style": {
         "noMagicNumbers": "off"
+      },
+      "suspicious": {
+        "noUnknownAtRules": "off"
       }
-    },
-    "domains": {
-      "next": "recommended",
-      "react": "recommended"
     }
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 120
   },
   "javascript": {
     "formatter": {
-      "semicolons": "asNeeded"
+      "semicolons": "asNeeded",
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 120,
+      "jsxQuoteStyle": "single"
     }
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  },
-  "extends": ["ultracite"]
+  }
 }

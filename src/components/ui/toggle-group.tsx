@@ -25,7 +25,7 @@ function ToggleGroup({
         className
       )}
       data-size={size}
-      data-slot="toggle-group"
+      data-slot='toggle-group'
       data-variant={variant}
       {...props}
     >
@@ -54,7 +54,7 @@ function ToggleGroupItem({
         className
       )}
       data-size={context.size || size}
-      data-slot="toggle-group-item"
+      data-slot='toggle-group-item'
       data-variant={context.variant || variant}
       {...props}
     >
