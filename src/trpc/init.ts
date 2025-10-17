@@ -3,10 +3,8 @@ import { headers } from "next/headers"
 import { cache } from "react"
 import { auth } from "@/utils/auth/auth"
 export const createTRPCContext = cache(async () => {
-  /**
-   * @see: https://trpc.io/docs/server/context
-   */
-  return await { userId: "user_123" }
+  const requestHeaders = await headers()
+  return { auth: null, headers: requestHeaders }
 })
 // Avoid exporting the entire t-object
 // since it's not very descriptive.
