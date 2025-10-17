@@ -2,14 +2,8 @@ import { initTRPC, TRPCError } from "@trpc/server"
 import { headers } from "next/headers"
 import { cache } from "react"
 import { auth } from "@/utils/auth/auth"
-export const createTRPCContext = cache(async () => {
-  const requestHeaders = await headers()
-  return { auth: null, headers: requestHeaders }
-})
-// Avoid exporting the entire t-object
-// since it's not very descriptive.
-// For instance, the use of a t variable
-// is common in i18n libraries.
+export const createTRPCContext = cache(() => ({ auth: null }))
+
 const t = initTRPC.create({
   /**
    * @see https://trpc.io/docs/server/data-transformers

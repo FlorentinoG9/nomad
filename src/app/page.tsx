@@ -1,5 +1,7 @@
 import { SignOutButton } from "@/features/auth/components/sign-out-button"
 import { caller } from "@/trpc/server"
+
+export const dynamic = "force-dynamic"
 export default async function Home() {
   const users = await caller.users.getUsers()
 
