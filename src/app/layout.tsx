@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
 import "./globals.css"
+import { Toaster } from "sonner"
 import { TRPCReactProvider } from "@/trpc/client"
 import { geistMono, geistSans } from "./fonts"
 
@@ -13,7 +14,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang='en'>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <main className='h-svh overflow-hidden'>{children}</main>
+          <Toaster richColors />
+        </TRPCReactProvider>
       </body>
     </html>
   )

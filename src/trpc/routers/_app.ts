@@ -1,10 +1,7 @@
-import prisma from "@/utils/db"
-import { baseProcedure, createTRPCRouter } from "../init"
+import { createTRPCRouter } from "../init"
+import { usersRouter } from "./users"
 export const appRouter = createTRPCRouter({
-  getUsers: baseProcedure.query(async () => {
-    const users = await prisma.user.findMany()
-    return users
-  }),
+  users: usersRouter,
 })
 // export type definition of API
 export type AppRouter = typeof appRouter
