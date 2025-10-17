@@ -1,8 +1,12 @@
 import prisma from "@/utils/db"
-import { baseProcedure, createTRPCRouter } from "../init"
+import { createTRPCRouter, protectedProcedure } from "../init"
 export const appRouter = createTRPCRouter({
-  getUsers: baseProcedure.query(async () => {
-    const users = await prisma.user.findMany()
+  getUsers: protectedProcedure.query(async ({ ctx }) => {
+    const users = await prisma.account.findMany({
+      where: {
+        userId: ctx.auth.user.id,
+      },
+    })
     return users
   }),
 })
