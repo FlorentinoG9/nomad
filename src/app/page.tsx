@@ -3,7 +3,7 @@ import { caller } from "@/trpc/server"
 
 export const dynamic = "force-dynamic"
 export default async function Home() {
-  const users = await caller.users.getUsers()
+  const users = await caller.users.getCurrentUsers()
 
   return (
     <section className='flex h-svh flex-col items-center justify-center overflow-hidden'>
