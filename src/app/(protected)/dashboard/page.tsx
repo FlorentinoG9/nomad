@@ -3,12 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Empty } from "@/components/ui/empty"
-import { Form, FormField } from "@/components/ui/form"
+import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Spinner } from "@/components/ui/spinner"
 import { useCreateWorkflow, useGetWorkflows } from "@/hooks/use-workflows"
 
 export default function Dashboard() {
@@ -55,7 +53,7 @@ function CreateWorkflowForm() {
 
   const { mutate: createWorkflow } = useCreateWorkflow()
 
-  function handleSubmit(values: CreateWorkflowFormSchema) {
+  function _handleSubmit(values: CreateWorkflowFormSchema) {
     createWorkflow(values)
   }
 
@@ -66,23 +64,32 @@ function CreateWorkflowForm() {
         <CardDescription>Create a new workflow to automate your tasks</CardDescription>
       </CardHeader>
       <CardContent className='flex flex-col gap-4'>
-        <Form {...form}>
-          <form className='space-y-4' onSubmit={form.handleSubmit(handleSubmit)}>
-            <FormField
-              control={form.control}
-              name='name'
-              render={({ field }) => <Input placeholder='Name' type='text' {...field} />}
-            />
-            <FormField
-              control={form.control}
-              name='description'
-              render={({ field }) => <Input placeholder='Description' type='text' {...field} />}
-            />
-            <Button className='w-full' disabled={form.formState.isSubmitting} type='submit'>
-              {form.formState.isSubmitting ? <Spinner /> : "Create"}
-            </Button>
-          </form>
-        </Form>
+        <FormField
+          control={form.control}
+          name='name'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input placeholder='Enter workflow name' type='text' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name='description'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Description</FormLabel>
+              <FormControl>
+                <Input placeholder='Enter workflow description' type='text' {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
       </CardContent>
     </Card>
   )
